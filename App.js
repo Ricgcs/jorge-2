@@ -1,31 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Touchable, View, Button } from 'react-native';
+import { Dimensions } from "react-native";
+import { StyleSheet, Text, Touchable, View} from 'react-native';
 import { width } from './src/screans/constants/medidas';
 import { height } from './src/screans/constants/medidas';
 import { TouchableOpacity } from 'react-native-web';
+
+
+
 export default function App() {
   return (
-    <View  style={styles.container}>
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <View style={styles.header}>
+        <Text>Impressionante</Text>
+        <StatusBar style="auto" />
+      </View>
 
-    <View style={styles.viw2}>
-      <View style={styles.inviw1}>
-<Button style={styles.Button}>1</Button>
-<Button style={styles.Button}>2</Button>
-<Button style={styles.Button}>3</Button>
-<Button style={styles.Button}>4</Button>
-</View>
+      <View style={styles.gridContainer}>
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>1</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>2</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>3</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>3</Text></TouchableOpacity>
+          
+        </View>
 
-<View style={styles.inviw2}>
-<Button style={styles.Button}>5</Button>
-<Button style={styles.Button}>6</Button>
-<Button style={styles.Button}>7</Button>
-<Button style={styles.Button}>8</Button>
-</View>
-    </View>
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>5</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>6</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>7</Text></TouchableOpacity>
+          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>8</Text></TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 }
@@ -37,34 +42,36 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
-  viw2:{
+  header: {
     flex: 1,
-    backgroundColor: 'black', 
-    justifyContent:"space-around",
-    width:width,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-
-  inviw1:{
-    flex: 1,
-    flexDirection:"row",
-    justifyContent:"space-around",
-    backgroundColor: 'black', 
-    width:width,
-    marginTop:height*0.1,
-  
+  gridContainer: {
+    backgroundColor: 'black',
+    justifyContent: 'space-around',
+    width: width,
+    height: height*0.3,
+    borderCurve:height*0.1,
   },
-
-  inviw2:{
-    flex: 1,
-    flexDirection:"row",
-    justifyContent:"space-around",
-    backgroundColor: 'black', 
-    width:width,
-
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems:'center',
+    backgroundColor: 'black',
+    width: width,
+    height: height * 0.1,
   },
-  Button:{
-    height:height*0.1,
-    width:width*0.3
-  }
+  button: {
+    height: height * 0.1,
+    width: width * 0.2,
+    backgroundColor: 'blue', 
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16, 
+  },
 });
