@@ -4,11 +4,16 @@ import { StyleSheet, Text, Touchable, View} from 'react-native';
 import { width } from './src/screans/constants/medidas';
 import { height } from './src/screans/constants/medidas';
 import { TouchableOpacity } from 'react-native-web';
-
+import BotaoBonito from './BotaoBonito';
 
 
 export default function App() {
+
+  function rollDice(x){
+    console.log(Math.random() *10).toFixed(0)
+  }
   return (
+
     <View style={styles.container}>
       <View style={styles.header}>
         <Text>Impressionante</Text>
@@ -17,18 +22,18 @@ export default function App() {
 
       <View style={styles.gridContainer}>
         <View style={styles.row}>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>1</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>2</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>3</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>3</Text></TouchableOpacity>
+        <BotaoBonito nome="1"/>
+        <BotaoBonito nome="2"/>
+        <BotaoBonito nome="3"/>
+        <BotaoBonito nome="4"/>
           
         </View>
 
         <View style={styles.row}>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>5</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>6</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>7</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>8</Text></TouchableOpacity>
+        <BotaoBonito nome="5"/>
+        <BotaoBonito nome="6"/>
+        <BotaoBonito nome="7"/>
+        <BotaoBonito nome="8"/>
         </View>
       </View>
     </View>

@@ -1,16 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
+import { Dimensions } from "react-native";
 import { StyleSheet, Text, Touchable, View} from 'react-native';
 import { width } from './src/screans/constants/medidas';
 import { height } from './src/screans/constants/medidas';
 import { TouchableOpacity } from 'react-native-web';
 
-export default function BotaoBonito() { // Melhor usar PascalCase para nomes de componentes
+
+export default function BotaoBonito(props) { 
+
+
+
     return (
-        <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>teste</Text>
+      <View>
+       <TouchableOpacity  style={styles.button}>
+            <Text style={styles.buttonText}>
+                {props.nome}
+            </Text>
         </TouchableOpacity>
+        </View>
     );
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -25,23 +36,22 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
     gridContainer: {
-      flex: 1,
       backgroundColor: 'black',
       justifyContent: 'space-around',
-  
       width: width,
-      height: height,
+      height: height*0.3,
+      borderCurve:height*0.1,
     },
     row: {
-      flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems:'center',
       backgroundColor: 'black',
       width: width,
+      height: height * 0.1,
     },
     button: {
-      height: height * 0.15,
+      height: height * 0.1,
       width: width * 0.2,
       backgroundColor: 'blue', 
       alignItems: 'center',
