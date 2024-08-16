@@ -4,6 +4,7 @@ import { StyleSheet, Text, Touchable, View} from 'react-native';
 import { width } from './src/screans/constants/medidas';
 import { height } from './src/screans/constants/medidas';
 import { TouchableOpacity } from 'react-native-web';
+<<<<<<< HEAD
 import { useState } from 'react';
 
 export default function App() {
@@ -15,7 +16,18 @@ function calc(teste){
   historico.push(calc);
 return calcular;
 }
+=======
+import BotaoBonito from './BotaoBonito';
+
+
+export default function App() {
+
+  function rollDice(x){
+    console.log(Math.random() *10).toFixed(0)
+  }
+>>>>>>> 49fe8336f1d195189ae897a14a14a2b29efb56b3
   return (
+
     <View style={styles.container}>
       <View style={styles.header}>
         <Text>{resultado}</Text>
@@ -25,6 +37,7 @@ return calcular;
 
       <View style={styles.gridContainer}>
         <View style={styles.row}>
+<<<<<<< HEAD
           <TouchableOpacity style={styles.button} onPress={() => {enviar(1); setResultado(calc(pegar))}}>
             <Text style={styles.buttonText}>1</Text>
           </TouchableOpacity>
@@ -52,6 +65,20 @@ return calcular;
           <TouchableOpacity style={styles.button} onPress={() => {enviar(8); setResultado(calc(pegar))}}>
             <Text style={styles.buttonText}>8</Text>
           </TouchableOpacity>
+=======
+        <BotaoBonito nome="1"/>
+        <BotaoBonito nome="2"/>
+        <BotaoBonito nome="3"/>
+        <BotaoBonito nome="4"/>
+          
+        </View>
+
+        <View style={styles.row}>
+        <BotaoBonito nome="5"/>
+        <BotaoBonito nome="6"/>
+        <BotaoBonito nome="7"/>
+        <BotaoBonito nome="8"/>
+>>>>>>> 49fe8336f1d195189ae897a14a14a2b29efb56b3
         </View>
       </View>
     </View>
