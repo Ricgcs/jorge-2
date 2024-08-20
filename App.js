@@ -1,31 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions } from "react-native";
-import { StyleSheet, Text, Touchable, View} from 'react-native';
+import { StyleSheet, Text, Touchable, View, Image} from 'react-native';
 import { width } from './src/screans/constants/medidas';
 import { height } from './src/screans/constants/medidas';
 import { TouchableOpacity } from 'react-native-web';
-<<<<<<< HEAD
+import BotaoBonito from './BotaoBonito';
 import { useState } from 'react';
 
 export default function App() {
   const [pegar, enviar] = useState();
   const [resultado, setResultado] = useState();
+ //let [teste, setTeste] = useState([...new Array]);
+ 
 function calc(teste){
-  var historico = []
+  
   const calcular = Math.floor(Math.random() * (teste + 1));
-  historico.push(calc);
+  //setTeste.push(calcular)
+ 
 return calcular;
 }
-=======
-import BotaoBonito from './BotaoBonito';
-
-
-export default function App() {
-
-  function rollDice(x){
-    console.log(Math.random() *10).toFixed(0)
-  }
->>>>>>> 49fe8336f1d195189ae897a14a14a2b29efb56b3
   return (
 
     <View style={styles.container}>
@@ -37,53 +30,40 @@ export default function App() {
 
       <View style={styles.gridContainer}>
         <View style={styles.row}>
-<<<<<<< HEAD
-          <TouchableOpacity style={styles.button} onPress={() => {enviar(1); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>1</Text>
-          </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {enviar(2); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>2</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {enviar(3); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>3</Text>
+            <Text style={styles.buttonText}><Image source={require('./imagem/bola.png')}/></Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {enviar(4); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>4</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.row}>
-          <TouchableOpacity style={styles.button} onPress={() => {enviar(5); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>5</Text>
+            <Text style={styles.buttonText}><Image source={require('./imagem/triangulo.png')}/></Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {enviar(6); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>6</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={() => {enviar(7); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>7</Text>
+            <Text style={styles.buttonText}><Image source={require('./imagem/quadrado.png')}/></Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} onPress={() => {enviar(8); setResultado(calc(pegar))}}>
-            <Text style={styles.buttonText}>8</Text>
+            <Text style={styles.buttonText}><Image source={require('./imagem/losango.png')}/></Text>
           </TouchableOpacity>
-=======
-        <BotaoBonito nome="1"/>
-        <BotaoBonito nome="2"/>
-        <BotaoBonito nome="3"/>
-        <BotaoBonito nome="4"/>
-          
         </View>
 
         <View style={styles.row}>
-        <BotaoBonito nome="5"/>
-        <BotaoBonito nome="6"/>
-        <BotaoBonito nome="7"/>
-        <BotaoBonito nome="8"/>
->>>>>>> 49fe8336f1d195189ae897a14a14a2b29efb56b3
+          <TouchableOpacity style={styles.button} onPress={() => {enviar(10); setResultado(calc(pegar))}}>
+            <Text style={styles.buttonText}><Image source={require('./imagem/losango_de_lado.png')}/></Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => {enviar(12); setResultado(calc(pegar))}}>
+            <Text style={styles.buttonText}><Image source={require('./imagem/pentagono.png')}/></Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => {enviar(20); setResultado(calc(pegar))}}>
+            <Text style={styles.buttonText}><Image source={require('./imagem/hexagono.png')}/></Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={() => {enviar(100); setResultado(calc(pegar))}}>
+            <Text style={styles.buttonText}><Image source={require('./imagem/losango_de_lado_dois.png')}/></Text>
+          </TouchableOpacity>
+          
         </View>
       </View>
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -98,7 +78,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   gridContainer: {
-    backgroundColor: 'black',
+    backgroundColor: '#DCDCDC',
     justifyContent: 'space-around',
     width: width,
     height: height*0.3,
@@ -108,14 +88,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems:'center',
-    backgroundColor: 'black',
+   
     width: width,
     height: height * 0.1,
   },
   button: {
     height: height * 0.1,
     width: width * 0.2,
-    backgroundColor: 'blue', 
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
@@ -124,4 +103,4 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16, 
   },
-});
+})
